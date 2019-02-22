@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,head{
+    width: 300px;
+}
+
+#inventory{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+
+.InvJs li{
+    display: inline-block;
+    background-color: red;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    text-align: center;
+}
+
