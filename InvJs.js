@@ -118,10 +118,11 @@ class ItemSlot{
 }
 
 class Item{
-    constructor(name,price,amount) {
+    constructor(name,price,amount,img) {
         this.name = name;
         this.price = price;
         this.amount = amount;
+        this.img = img
     }
 }
 
