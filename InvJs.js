@@ -118,12 +118,20 @@ class ItemSlot{
 }
 
 class Item{
+<<<<<<< HEAD
     constructor(name,price,amount,type,data) {
         this.name = name;
         this.price = price;
         this.amount = amount;
         this.type = type;
         this.data = data;
+=======
+    constructor(name,price,amount,img) {
+        this.name = name;
+        this.price = price;
+        this.amount = amount;
+        this.img = img
+>>>>>>> 8c3e875df02c34b9c982e6da32b3ba60ef1b0b1e
     }
 }
 

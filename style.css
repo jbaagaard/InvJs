@@ -24,3 +24,7 @@ html,head{
     text-align: center;
 }
 
+.inv li img{
+    height: 50px;
+}
+
