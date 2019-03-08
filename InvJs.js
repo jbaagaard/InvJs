@@ -104,9 +104,9 @@ class ItemSlot{
         this.onSelect = function(){
             selected = !selected;
             if(selected)
-                _div.style.backgroundColor = "green";
+                _div.style.backgroundColor = "rgba(0,255,0,0.2)";
             else
-                _div.style.backgroundColor = "red";
+                _div.style.backgroundColor = "rgba(255,255,255,0.2)";
         };
         _div.addEventListener("mousedown",this.onSelect);
         this.isSelected = function () {return selected};
@@ -118,22 +118,24 @@ class ItemSlot{
 }
 
 class Item{
-    constructor(name,price,amount) {
+    constructor(name,price,amount,type,data) {
         this.name = name;
         this.price = price;
         this.amount = amount;
+        this.type = type;
+        this.data = data;
     }
 }
 
-var itemArray = [
-    new Item("apple",10,1),
-    new Item("pear",10,1),
-    new Item("bannana",10,1),
-    new Item("strawberry",10,1),
-    new Item("dicks",10,1),
+let itemArray = [
+    new Item("apple",10,1,"material",{}),
+    new Item("pear",10,1,"material",{}),
+    new Item("bannana",10,1,"material",{}),
+    new Item("strawberry",10,1,"material",{}),
+    new Item("dicks",10,1,"material",{}),
 ];
 
-var inv = new Inventory(4,document.getElementById("inventory"));
+let inv = new Inventory(4,document.getElementById("inventory"));
 inv.drawItems();
 console.log(inv.getPos());
 
