@@ -97,7 +97,7 @@ class ItemSlot{
 
     constructor(div,id){
         this._ID = id;
-        this.currentItem = new Item("none",0,0);
+        this.currentItem = new Item("none","",0,0,"none",{});
         let _div = div;
         let selected = false;
 
@@ -118,29 +118,22 @@ class ItemSlot{
 }
 
 class Item{
-<<<<<<< HEAD
-    constructor(name,price,amount,type,data) {
+    constructor(name,img,price,amount,type,data) {
         this.name = name;
+        this.img = img;
         this.price = price;
         this.amount = amount;
         this.type = type;
         this.data = data;
-=======
-    constructor(name,price,amount,img) {
-        this.name = name;
-        this.price = price;
-        this.amount = amount;
-        this.img = img
->>>>>>> 8c3e875df02c34b9c982e6da32b3ba60ef1b0b1e
     }
 }
 
 let itemArray = [
-    new Item("apple",10,1,"material",{}),
-    new Item("pear",10,1,"material",{}),
-    new Item("bannana",10,1,"material",{}),
-    new Item("strawberry",10,1,"material",{}),
-    new Item("dicks",10,1,"material",{}),
+    new Item("apple","",10,1,"material",{}),
+    new Item("pear","",10,1,"material",{}),
+    new Item("bannana","",10,1,"material",{}),
+    new Item("strawberry","",10,1,"material",{}),
+    new Item("dicks","",10,1,"material",{}),
 ];
 
 let inv = new Inventory(4,document.getElementById("inventory"));
