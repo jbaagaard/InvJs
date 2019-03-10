@@ -1,14 +1,36 @@
 let UI = {
   getSeletedItems: window.document.getElementById("get-selected-items"),
   addSlot: window.document.getElementById("add-slot"),
-  addApple: window.document.getElementById("add-apple")
+  addApple: window.document.getElementById("add-apple"),
+  removeItems: window.document.getElementById("remove-items"),
+  swapItems: window.document.getElementById("swap-items")
 };
 
 UI.getSeletedItems.addEventListener("click",function () {
     let out = inv.getItemlist().filter(obj =>{
         return obj.isSelected() === true;
     });
+    inv.drawItems();
+    console.log(out)
+});
 
+UI.removeItems.addEventListener("click",function () {
+    let out = inv.getItemlist().filter(obj =>{
+        return obj.isSelected() === true;
+    });
+    for(let i = 0;i<out.length;i++){
+        inv.removeItem(out[i]._ID)
+    }
+    inv.drawItems();
+    console.log(out)
+});
+
+UI.swapItems.addEventListener("click",function () {
+    let out = inv.getItemlist().filter(obj =>{
+        return obj.isSelected() === true;
+    });
+    inv.swapItems(out[0]._ID,out[1]._ID);
+    inv.drawItems();
     console.log(out)
 });
 
@@ -21,6 +43,8 @@ UI.addApple.addEventListener("click",function () {
 
 UI.addSlot.addEventListener("click",function () {
     inv.addSlot();
+    inv.drawItems();
+
 });
 
 class Inventory{
@@ -38,6 +62,17 @@ class Inventory{
 
         _div.addEventListener('click',function () {
         });
+
+        this.swapItems = function (_id1, _id2) {
+          let tempItem = itemArray[_id1].currentItem;
+
+          itemArray[_id1].currentItem = itemArray[_id2].currentItem;
+          itemArray[_id2].currentItem = tempItem;
+        };
+
+        this.removeItem = function (index) {
+            itemArray[index].currentItem = new Item("none","",0,0,"none",{});
+        };
 
         this.getPos = function(){
             return _div.getBoundingClientRect()
@@ -131,7 +166,7 @@ class Item{
 let itemArray = [
     new Item("apple","",10,1,"material",{}),
     new Item("pear","",10,1,"material",{}),
-    new Item("bannana","",10,1,"material",{}),
+    new Item("banana","",10,1,"material",{}),
     new Item("strawberry","",10,1,"material",{}),
     new Item("dicks","",10,1,"material",{}),
 ];
