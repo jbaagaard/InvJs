@@ -1,9 +1,9 @@
 let UI = {
-  getSeletedItems: window.document.getElementById("get-selected-items"),
-  addSlot: window.document.getElementById("add-slot"),
-  addApple: window.document.getElementById("add-apple"),
-  removeItems: window.document.getElementById("remove-items"),
-  swapItems: window.document.getElementById("swap-items")
+  getSeletedItems: window.document.getElementById("invjs-get-selected-items"),
+  addSlot: window.document.getElementById("invjs-add-slot"),
+  addApple: window.document.getElementById("invjs-add-apple"),
+  removeItems: window.document.getElementById("invjs-remove-items"),
+  swapItems: window.document.getElementById("invjs-swap-items")
 };
 
 UI.getSeletedItems.addEventListener("click",function () {
@@ -171,7 +171,7 @@ let itemArray = [
     new Item("dicks","",10,1,"material",{}),
 ];
 
-let inv = new Inventory(4,document.getElementById("inventory"));
+let inv = new Inventory(20,document.getElementById("inventory"));
 inv.drawItems();
 console.log(inv.getPos());
 

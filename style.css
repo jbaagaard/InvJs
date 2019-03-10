@@ -8,11 +8,13 @@ html,head{
     background-color: darkslategrey;
 }
 
-#inventory{
+#inventory-wrapper{
     position: absolute;
-    cursor: move;
     background-color: rgba(255,255,255,0.2);
     width: 300px;
+}
+
+#inventory{
 }
 
 .InvJs li{

@@ -7,15 +7,18 @@
 </head>
 <body>
 
-    <ul id="inventory" class="InvJs">
-</ul>
-<button id="get-selected-items">get selected items</button>
-<button id="add-slot">Add item slot</button>
-<button id="add-apple">Add apple</button>
-<button id="remove-items">remove selected</button>
-<button id="swap-items">swap</button>
+<div id="inventory-wrapper">
+    <button id="invjs-get-selected-items">get selected items</button>
+    <button id="invjs-add-slot">Add item slot</button>
+    <button id="invjs-add-apple">Add apple</button>
+    <button id="invjs-remove-items">remove selected</button>
+    <button id="invjs-swap-items">swap</button>
+    <ul id="inventory" class="InvJs"></ul>
 
-<script src="InvJs.js" ></script>
-    <script src="main.js"></script>
+</div>
+<script src="InvJs.js"></script>
+<script src="drag.js"></script>
+<script src="taskJs.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
