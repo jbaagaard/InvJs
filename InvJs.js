@@ -7,43 +7,43 @@ let UI = {
 };
 
 UI.getSeletedItems.addEventListener("click",function () {
-    let out = inv.getItemlist().filter(obj =>{
+    let out = player.inv.getItemlist().filter(obj =>{
         return obj.isSelected() === true;
     });
-    inv.drawItems();
+    player.inv.drawItems();
     console.log(out)
 });
 
 UI.removeItems.addEventListener("click",function () {
-    let out = inv.getItemlist().filter(obj =>{
+    let out = player.inv.getItemlist().filter(obj =>{
         return obj.isSelected() === true;
     });
     for(let i = 0;i<out.length;i++){
-        inv.removeItem(out[i]._ID)
+        player.inv.removeItem(out[i]._ID)
     }
-    inv.drawItems();
+    player.inv.drawItems();
     console.log(out)
 });
 
 UI.swapItems.addEventListener("click",function () {
-    let out = inv.getItemlist().filter(obj =>{
+    let out = player.inv.getItemlist().filter(obj =>{
         return obj.isSelected() === true;
     });
-    inv.swapItems(out[0]._ID,out[1]._ID);
-    inv.drawItems();
+    player.inv.swapItems(out[0]._ID,out[1]._ID);
+    player.inv.drawItems();
     console.log(out)
 });
 
 
 UI.addApple.addEventListener("click",function () {
-    inv.addItem(itemArray[Math.round(Math.random()*(itemArray.length-1))]);
+    player.inv.addItem(itemArray[Math.round(Math.random()*(itemArray.length-1))]);
 
-    inv.drawItems();
+    player.inv.drawItems();
 });
 
 UI.addSlot.addEventListener("click",function () {
-    inv.addSlot();
-    inv.drawItems();
+    player.inv.addSlot();
+    player.inv.drawItems();
 
 });
 
@@ -148,7 +148,8 @@ class ItemSlot{
 
         this.DrawItem = function () {
             _div.innerHTML = this.currentItem.name + ": "+ this.currentItem.amount
-        }
+        };
+        this.DrawItem();
     }
 }
 
@@ -171,9 +172,6 @@ let itemArray = [
     new Item("dicks","",10,1,"material",{}),
 ];
 
-let inv = new Inventory(20,document.getElementById("inventory"));
-inv.drawItems();
-console.log(inv.getPos());
 
 
 
