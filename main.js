@@ -4,8 +4,33 @@ let places = {
     mine:{name:"mine",pos:[0,10]},
 };
 
+
+
+
+class Location{
+    _name;
+    _type;
+    _materials;
+    _difficulity;
+    _pos;
+    constructor(name,type,materials,difficulity,pos){
+        this._name = name;
+        this._type = type;
+        this._materials = materials;
+        this._difficulity = difficulity;
+        this._pos = pos;
+
+    }
+
+}
+
 class Player{
+    test(){
+        console.log(this);
+    }
 constructor(div){
+        this._test = this.test.bind(this);
+
     this.div = div;
     this.name = "john doe";
     this.inv = new Inventory(8  ,document.getElementById("inventory"));
@@ -17,6 +42,7 @@ constructor(div){
         weapon: 1,
         inventory:1
     };
+
     this.equipment = {
         head: new Item("none","",0,1,"head",{}),
         body: new Item("none","",0,1,"body",{}),
@@ -42,6 +68,7 @@ constructor(div){
 
     }
 }
+
 }
 
 let player = new Player();
