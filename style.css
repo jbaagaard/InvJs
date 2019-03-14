@@ -4,7 +4,6 @@
 }
 
 html,head{
-    width: 300px;
     background-color: darkslategrey;
 }
 
@@ -22,11 +21,11 @@ html,head{
     background-color: rgba(255,255,255,0.2);list-style: none;
     width: 50px;
     height: 50px;
-    margin: 8px;
+    margin: 4px;
     text-align: center;
 }
 
-.inv li img{
-    height: 50px;
+.InvJs img{
+    width: 50px;
+    position: absolute;
 }
-

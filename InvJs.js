@@ -54,9 +54,15 @@ class Inventory{
         let itemArray = [];
 
         for(let i = 0; i<slots; i++){
-            var node = document.createElement("LI");
+            let node = document.createElement("li");
             node.classList.add("InvJs-li");
-            var li = _div.appendChild(node);
+
+            let img = document.createElement("div");
+            img.src = "img/log.png";
+            node.appendChild(img);
+
+            let li = _div.appendChild(node);
+
             itemArray.push(new ItemSlot(li,i));
         }
 
@@ -164,13 +170,6 @@ class Item{
     }
 }
 
-let itemArray = [
-    new Item("apple","",10,1,"material",{}),
-    new Item("pear","",10,1,"material",{}),
-    new Item("banana","",10,1,"material",{}),
-    new Item("strawberry","",10,1,"material",{}),
-    new Item("dicks","",10,1,"material",{}),
-];
 
 
 

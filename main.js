@@ -1,28 +1,40 @@
-let places = {
-    town:{name:"town",type:"town",dificulity:1,pos:[0,0]},
-    forrest:{name:"forrest",pos:[10,0]},
-    mine:{name:"mine",pos:[0,10]},
-};
-
-
-
-
 class Location{
     _name;
     _type;
-    _materials;
+    _drops;
     _difficulity;
     _pos;
-    constructor(name,type,materials,difficulity,pos){
+
+    constructor(name,type,drops,difficulity,pos){
         this._name = name;
         this._type = type;
-        this._materials = materials;
+        this._drops = drops;
         this._difficulity = difficulity;
         this._pos = pos;
 
     }
 
 }
+
+
+let itemArray = [
+    new Item("apple","img/log.png",10,1,"material",{}),
+    new Item("Log","",3,1,"material",{}),
+    new Item("stone","",3,1,"material",{}),
+    new Item("strawberry","",10,1,"material",{}),
+    new Item("dicks","",10,1,"material",{}),
+];
+
+
+
+let places = {
+    town: new Location("Town","town",[],0,[0,0]),
+    forrest: new Location("forrest","forrest",[[itemArray[1],[3,6]]],1,[10,0]),
+    mine:{name:"mine",pos:[0,10]},
+};
+
+
+
 
 class Player{
     test(){
