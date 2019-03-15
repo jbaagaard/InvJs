@@ -55,6 +55,8 @@ constructor(div){
         inventory:1
     };
 
+
+
     this.equipment = {
         head: new Item("none","",0,1,"head",{}),
         body: new Item("none","",0,1,"body",{}),
