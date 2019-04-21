@@ -86,6 +86,9 @@ class Inventory{
 
         this.getItemlist = function () {return itemArray};
 
+
+
+
         this.findFreeSlot = function () {
             var newlist = itemArray.find(x => x.currentItem.name === "none");
             if(!newlist){
@@ -114,7 +117,6 @@ class Inventory{
                 itemArray[freespot].currentItem.name = item.name;
                 itemArray[freespot].currentItem.price = item.price;
                 itemArray[freespot].currentItem.amount += item.amount;
-
             }
 
         };
